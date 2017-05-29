@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Masayuki Komastsu",
+  "license": "MIT",
   "devDependencies": {
-    "browserify": "^14.4.0"
+    "mocha": "^3.4.2"
   }
 }
