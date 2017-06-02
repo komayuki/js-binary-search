@@ -1,20 +1,24 @@
-module.exports = (array, target) => {
+module.exports = (list, target) => {
+  if (typeof list !== "object") {
+    return "type error"
+  }
+
   let left  = 0;
-  let right = array.length;
+  let right = list.length;
   
   while(left < right){
     mid = (left + right) / 2;
     mid = Math.floor(mid);
-    if (target === array[mid]){
+    if (target === list[mid]){
       return { 
 	index: mid, 
-	item: array[mid]
+	item: list[mid]
       }
-    }else if(array[mid] > target){     
+    }else if(list[mid] > target){     
       right = mid;
     }else{
       left = mid + 1;
     }
   }
-  return "not find"
+  return "not found"
 }
