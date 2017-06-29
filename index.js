@@ -39,7 +39,7 @@ bSearch.search_in_associative = function (list, key, target) {
     if (target === list[mid][key]){
       return {
         index: mid,
-        item: list[mid][key]
+        item: list[mid]
       }
     }else if(list[mid][key] > target){
       right = mid;
