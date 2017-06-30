@@ -1,54 +1,62 @@
-var bSearch = {}
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  global.bSearch = factory()
 
-bSearch.search = function (list, target) {
-  if (typeof list !== "object") {
-    return "type error"
-  }
+}(this, (function () {
+  'use strict';
 
-  let left  = 0;
-  let right = list.length;
-
-  while(left < right){
-    mid = (left + right) / 2;
-    mid = Math.floor(mid);
-    if (target === list[mid]){
-      return {
-	index: mid,
-	item: list[mid]
-      }
-    }else if(list[mid] > target){
-      right = mid;
-    }else{
-      left = mid + 1;
+  var bSearch = {};
+  bSearch.search = function (list, target) {
+    if (typeof list !== "object") {
+      return "type error"
     }
-  }
-  return "not found"
-}
 
-bSearch.search_in_associative = function (list, key, target) {
-  if (typeof list !== "object") {
-    return "type error"
-  }
+    var left  = 0;
+    var right = list.length;
 
-  let left  = 0;
-  let right = list.length;
-
-  while(left < right){
-    mid = (left + right) / 2;
-    mid = Math.floor(mid);
-    if (target === list[mid][key]){
-      return {
-        index: mid,
-        item: list[mid]
+    while(left < right){
+      var mid = (left + right) / 2;
+      mid = Math.floor(mid);
+      if (target === list[mid]){
+        return {
+          index: mid,
+          item: list[mid]
+        }
+      }else if(list[mid] > target){
+        right = mid;
+      }else{
+        left = mid + 1;
       }
-    }else if(list[mid][key] > target){
-      right = mid;
-    }else{
-      left = mid + 1;
     }
+    return -1
   }
-  return "not found"
-}
 
+  bSearch.search_in_associative = function (list, key, target) {
+    if (typeof list !== "object") {
+      return "type error"
+    }
 
-module.exports = bSearch
+    let left  = 0;
+    let right = list.length;
+
+    while(left < right){
+      var mid = (left + right) / 2;
+      mid = Math.floor(mid);
+      if (target === list[mid][key]){
+        return {
+          index: mid,
+          item: list[mid]
+        }
+      }else if(list[mid][key] > target){
+        right = mid;
+      }else{
+        left = mid + 1;
+      }
+    }
+    return "not found"
+  }
+
+  return bSearch;
+
+})));
