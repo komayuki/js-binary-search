@@ -1,8 +1,11 @@
 {
   "name": "js-binary-search",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Binary search of javascript",
-  "keywords": "binary_search algorithm",
+  "keywords": [
+    "binary_search",
+    "algorithm"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "mocha"
