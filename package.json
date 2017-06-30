@@ -1,12 +1,21 @@
 {
   "name": "js-binary-search",
-  "version": "2.0.0",
-  "description": "",
+  "version": "2.0.2",
+  "description": "Binary search of javascript",
+  "keywords": "binary_search algorithm",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
-  "author": "Masayuki Komastsu",
+  "author": {
+    "name": "Masayuki Komastsu",
+    "email" : "info@notsleeeping.com",
+    "url" : "https://github.com/komayuki"
+  },
+  "repository" : {
+    "type": "git",
+    "url" : "https://github.com/komayuki/js-binary-search"
+  },
   "license": "MIT",
   "devDependencies": {
     "mocha": "^3.4.2"
