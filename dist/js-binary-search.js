@@ -1,13 +1,11 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  global.bSearch = factory()
+	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+	typeof define === 'function' && define.amd ? define(factory) :
+	(global.bSearch = factory());
+}(this, (function () { 'use strict';
 
-}(this, (function () {
-  'use strict';
-
-  var bSearch = {};
-  bSearch.search = function (list, target) {
+var jsBinarySearch = {
+  search (list, target) {
     if (typeof list !== "object") {
       return "type error"
     }
@@ -30,9 +28,8 @@
       }
     }
     return -1
-  }
-
-  bSearch.search_in_associative = function (list, key, target) {
+  },
+  search_in_associative (list, key, target) {
     if (typeof list !== "object") {
       return "type error"
     }
@@ -56,7 +53,8 @@
     }
     return "not found"
   }
+};
 
-  return bSearch;
+return jsBinarySearch;
 
 })));

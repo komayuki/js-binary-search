@@ -1,4 +1,4 @@
-const bs = require('../index');
+const bs = require('../dist/js-binary-search.js');
 var assert = require('assert')
 
 describe('binarySearch test', () => {
