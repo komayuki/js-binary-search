@@ -1,7 +1,7 @@
 export default {
   search (list, target) {
-    if (typeof list !== "object") {
-      return "type error"
+    if (!list instanceof Array) {
+      throw new Error()
     }
 
     var left  = 0;
@@ -24,8 +24,8 @@ export default {
     return -1
   },
   search_in_associative (list, key, target) {
-    if (typeof list !== "object") {
-      return "type error"
+    if (!list instanceof Array) {
+      throw new Error()
     }
 
     let left  = 0;
